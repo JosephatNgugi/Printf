@@ -36,3 +36,17 @@ int print_string(va_list params)
 	}
 	return (len);
 }
+
+/**
+ * print_percent - prints a percent symbol
+ * @params: Argument list
+ * to be printed
+ *
+ * Return: The number of printed characters.
+ */
+int print_percent(va_list params)
+{
+	(void)params);
+
+	return (_putchar('%'));
+}
