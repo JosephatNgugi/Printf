@@ -85,3 +85,32 @@ int print_integer(va_list params)
 	return (len);
 }
 
+/**
+ * print_binary - prints an unsigned int in binary format
+ * @params: Argument list containing the unsigned int to be printed
+ *
+ * Return: The number of printed characters.
+ */
+int print_binary(va_list params)
+{
+	unsigned int num = va_arg(params, unsigned int);
+	int len = 0, i;
+	char *binary_str;
+
+	if (num == 0)
+	{
+		len += _putchar('0');
+		return (len);
+
+	for (i = 0; num > 0; i++)
+	{
+		binary[i] = num % 2 + '0';
+		num /= 2;
+	}
+	i--;
+
+	for (; i >= 0; i--)
+		len += _putchar(binary[i]);
+
+	return (len);
+}
