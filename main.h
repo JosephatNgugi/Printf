@@ -4,6 +4,7 @@
 /******** C Standard library headers ********/
 #include <stdarg.h>
 #include <unistd.h>
+#include <stddef.h>
 
 /******** Typedef and Structs ********/
 /**

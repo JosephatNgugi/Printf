@@ -34,6 +34,7 @@ int print_string(va_list params)
 		len += _putchar(*str);
 		str++;
 	}
+
 	return (len);
 }
 
@@ -59,7 +60,11 @@ int print_percent(va_list params)
  */
 int print_integer(va_list params)
 {
-	int len = 0, num = va_arg(params, int);
+	int len = 0, div = 1;
+	int num = va_arg(params, int);
+
+	if (num == 0)
+		return (_putchar('0'));
 
 	if (num < 0)
 	{
@@ -67,9 +72,15 @@ int print_integer(va_list params)
 		num = -num;
 	}
 
-	if (num / 10)
-		len += print_integer(num / 10);
-	len += _putchar(num % 10 + '0');
+	while (num / div > 9)
+		div *= 10;
+
+	while (div != 0)
+	{
+		len += _putchar(num / div + '0');
+		num %= div;
+		div /= 10;
+	}
 
 	return (len);
 }
