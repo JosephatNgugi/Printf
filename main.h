@@ -24,4 +24,7 @@ int _printf(const char *format, ...);
 int _putchar(char c);
 int (*get_spec_func(char specifier))(va_list);
 
+int print_char(va_list params);
+int print_string(va_list params)
+
 #endif /* MAIN_H */
