@@ -40,13 +40,37 @@ int print_string(va_list params)
 /**
  * print_percent - prints a percent symbol
  * @params: Argument list
- * to be printed
  *
  * Return: The number of printed characters.
  */
 int print_percent(va_list params)
 {
-	(void)params);
+	(void)params;
 
 	return (_putchar('%'));
 }
+
+/**
+ * print_integer - prints an integer
+ * @params: Argument list containing the integer
+ * to be printed
+ *
+ * Return: The number of printed characters.
+ */
+int print_integer(va_list params)
+{
+	int len = 0, num = va_arg(params, int);
+
+	if (num < 0)
+	{
+		len += _putchar('-');
+		num = -num;
+	}
+
+	if (num / 10)
+		len += print_integer(num / 10);
+	len += _putchar(num % 10 + '0');
+
+	return (len);
+}
+
