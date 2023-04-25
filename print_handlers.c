@@ -95,12 +95,13 @@ int print_binary(va_list params)
 {
 	unsigned int num = va_arg(params, unsigned int);
 	int len = 0, i;
-	char *binary_str;
+	char binary[50];
 
 	if (num == 0)
 	{
 		len += _putchar('0');
 		return (len);
+	}
 
 	for (i = 0; num > 0; i++)
 	{
