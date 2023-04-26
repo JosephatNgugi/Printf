@@ -8,11 +8,11 @@
  * Return: The number of characters to be printed
  * excluding the null byte used to end output to strings
  */
- int _printf(const char *format, ...)
+int _printf(const char *format, ...)
 {
 	va_list params;
 	int (*handler)(va_list);
-	int fmt_ind, print_count = 0;
+	int fmt_ind = 0, print_count = 0;
 
 	va_start(params, format);
 	while (format[fmt_ind])

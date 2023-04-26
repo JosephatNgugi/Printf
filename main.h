@@ -6,6 +6,9 @@
 #include <unistd.h>
 #include <stddef.h>
 
+/******** Macros ********/
+#define BUFFER 1024
+
 /******** Typedef and Structs ********/
 /**
  * struct conversion - Represents a conversion specifier and
@@ -32,6 +35,6 @@ int print_integer(va_list params);
 int print_octal(va_list params);
 int print_binary(va_list params);
 int print_hexa(va_list params);
-int print_unsigned(va_list params);
+int print_unsigned_int(va_list params);
 
 #endif /* MAIN_H */

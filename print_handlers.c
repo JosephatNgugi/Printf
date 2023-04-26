@@ -27,7 +27,7 @@ int print_string(va_list params)
 	int len = 0;
 
 	if (str == NULL)
-		str = "(nil)";
+		str = "(null)";
 
 	while (*str)
 	{
